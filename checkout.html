@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Heritage Gold</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">HERITAGE GOLD</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="index.html#brands">BRANDS</a></li>
+                    <li><a href="index.html#collections">COLLECTIONS</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <button class="icon-btn" onclick="toggleSearch()">🔍</button>
+                <button class="icon-btn" onclick="toggleCart()">🛍️</button>
+                <button class="icon-btn" onclick="toggleAccount()">👤</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="checkout-container">
+        <div class="checkout-form">
+            <h2>CHECKOUT</h2>
+            <div class="form-section">
+                <h3>SHIPPING INFORMATION</h3>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="+1 (555) 000-0000">
+                </div>
+                <div class="form-group">
+                    <label>Street Address</label>
+                    <input type="text" placeholder="123 Luxury Avenue">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" placeholder="New York">
+                </div>
+                <div class="form-group">
+                    <label>State / Province</label>
+                    <input type="text" placeholder="NY">
+                </div>
+                <div class="form-group">
+                    <label>Postal Code</label>
+                    <input type="text" placeholder="10001">
+                </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <select>
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>United Kingdom</option>
+                        <option>France</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>DELIVERY METHOD</h3>
+                <label><input type="radio" name="delivery" value="standard"> Standard Shipping (5-7 business days)</label>
+                <label><input type="radio" name="delivery" value="express"> Express Shipping (2-3 business days)</label>
+                <label><input type="radio" name="delivery" value="overnight"> Overnight Delivery</label>
+            </div>
+
+            <div class="form-section">
+                <h3>PAYMENT METHOD</h3>
+                <label><input type="radio" name="payment" value="credit"> Credit / Debit Card</label>
+                <label><input type="radio" name="payment" value="paypal"> PayPal</label>
+                <label><input type="radio" name="payment" value="bank"> Bank Transfer / Wire</label>
+            </div>
+
+            <div class="form-section">
+                <h3>CARD DETAILS</h3>
+                <div class="form-group">
+                    <label>Cardholder Name</label>
+                    <input type="text" placeholder="Name on card">
+                </div>
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" placeholder="1234 5678 9012 3456">
+                </div>
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="text" placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                    <label>CVV</label>
+                    <input type="text" placeholder="123">
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="processPayment()" style="width: 100%; padding: 1.2rem; font-size: 1.1rem;">CONFIRM ORDER</button>
+        </div>
+
+        <div class="order-summary">
+            <h3>ORDER SUMMARY</h3>
+            <div id="orderItems"></div>
+            <div id="orderTotal"></div>
+            <p style="font-size: 0.85rem; color: #999; margin-top: 1.5rem; text-align: center;">
+                By clicking "Confirm Order", you agree to our Terms & Conditions.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ABOUT US</h4>
+                <ul><li><a href="#">Our Story</a></li><li><a href="#">Sustainability</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>CUSTOMER SERVICE</h4>
+                <ul><li><a href="#">Contact Us</a></li><li><a href="#">Shipping Info</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>POLICIES</h4>
+                <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms & Conditions</a></li></ul>
+            </div>
+            <div class="footer-section">
+                <h4>CONNECT</h4>
+                <ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Heritage Gold. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        function processPayment() {
+            alert('Payment processed successfully!');
+            localStorage.removeItem('cart');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

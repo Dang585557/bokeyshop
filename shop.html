@@ -1,11 +1,195 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shop | Heritage Gold</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Heritage Gold</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Shop All Products</h1>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">HERITAGE GOLD</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="index.html#brands">BRANDS</a></li>
+                    <li><a href="index.html#collections">COLLECTIONS</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <button class="icon-btn" onclick="toggleSearch()">🔍</button>
+                <button class="icon-btn" onclick="toggleCart()">🛍️</button>
+                <button class="icon-btn" onclick="toggleAccount()">👤</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SHOP SECTION -->
+    <section class="shop-container">
+        <!-- SIDEBAR FILTERS -->
+        <aside class="shop-sidebar">
+            <h3>FILTERS</h3>
+            
+            <div class="filter-group">
+                <h4>BRAND</h4>
+                <label><input type="checkbox" name="brand" value="CHANEL"> CHANEL</label>
+                <label><input type="checkbox" name="brand" value="GUCCI"> GUCCI</label>
+                <label><input type="checkbox" name="brand" value="LOUIS VUITTON"> LOUIS VUITTON</label>
+                <label><input type="checkbox" name="brand" value="DIOR"> DIOR</label>
+                <label><input type="checkbox" name="brand" value="HERMÈS"> HERMÈS</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>PRICE RANGE</h4>
+                <label><input type="radio" name="price" value="0-1000"> Under $1,000</label>
+                <label><input type="radio" name="price" value="1000-3000"> $1,000 - $3,000</label>
+                <label><input type="radio" name="price" value="3000-5000"> $3,000 - $5,000</label>
+                <label><input type="radio" name="price" value="5000+"> $5,000+</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>COLOR</h4>
+                <div class="color-filter">
+                    <div class="color-dot" style="background-color: black;" title="Black"></div>
+                    <div class="color-dot" style="background-color: gold;" title="Gold"></div>
+                    <div class="color-dot" style="background-color: brown;" title="Brown"></div>
+                    <div class="color-dot" style="background-color: white;" title="White"></div>
+                    <div class="color-dot" style="background-color: red;" title="Red"></div>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="applyFilters()" style="width: 100%; margin-top: 2rem;">APPLY FILTERS</button>
+            <button class="btn-secondary" onclick="clearFilters()" style="width: 100%; margin-top: 1rem;">CLEAR ALL</button>
+        </aside>
+
+        <!-- PRODUCTS GRID -->
+        <main class="shop-main">
+            <div class="shop-header">
+                <h1>LUXURY COLLECTION</h1>
+                <div class="sort-options">
+                    <label>Sort by:</label>
+                    <select onchange="sortProducts(this.value)">
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A to Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid" id="shopProducts">
+                <!-- Products will be loaded here -->
+            </div>
+        </main>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ABOUT US</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>CUSTOMER SERVICE</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>POLICIES</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>CONNECT</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Heritage Gold. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+    <script>
+        let filteredProducts = [];
+
+        function loadShopProducts() {
+            filteredProducts = [...products];
+            displayProducts(filteredProducts);
+        }
+
+        function displayProducts(productsToDisplay) {
+            const container = document.getElementById('shopProducts');
+            container.innerHTML = productsToDisplay.map(product => createProductCard(product)).join('');
+        }
+
+        function applyFilters() {
+            const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(el => el.value);
+            const selectedPrice = document.querySelector('input[name="price"]:checked')?.value;
+
+            filteredProducts = products.filter(product => {
+                const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
+                const priceMatch = !selectedPrice || checkPriceRange(product.price, selectedPrice);
+                return brandMatch && priceMatch;
+            });
+
+            displayProducts(filteredProducts);
+        }
+
+        function checkPriceRange(price, range) {
+            const ranges = {
+                '0-1000': [0, 1000],
+                '1000-3000': [1000, 3000],
+                '3000-5000': [3000, 5000],
+                '5000+': [5000, Infinity]
+            };
+            const [min, max] = ranges[range];
+            return price >= min && price <= max;
+        }
+
+        function clearFilters() {
+            document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(el => el.checked = false);
+            filteredProducts = [...products];
+            displayProducts(filteredProducts);
+        }
+
+        function sortProducts(sortBy) {
+            switch(sortBy) {
+                case 'price-low':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name':
+                    filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                default:
+                    filteredProducts.sort((a, b) => a.id - b.id);
+            }
+            displayProducts(filteredProducts);
+        }
+
+        document.addEventListener('DOMContentLoaded', loadShopProducts);
+    </script>
 </body>
 </html>
