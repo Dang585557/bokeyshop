@@ -149,5 +149,48 @@
     </footer>
 
     <script src="assets/js/app.js"></script>
+
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>YOUR CART</h2>
+                <button class="close-btn" onclick="toggleCart()">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total">TOTAL: <span id="cartTotal">$0</span></div>
+                <button class="btn-primary" onclick="window.location.href=\'checkout.html\'">CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH OVERLAY -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <button class="close-btn" onclick="toggleSearch()">&times;</button>
+            <input type="text" placeholder="Search for products, brands...">
+            <button class="btn-primary">SEARCH</button>
+        </div>
+    </div>
+
+    <!-- ACCOUNT OVERLAY -->
+    <div class="account-overlay" id="accountOverlay">
+        <div class="account-sidebar">
+            <div class="account-header">
+                <h2>MY ACCOUNT</h2>
+                <button class="close-btn" onclick="toggleAccount()">&times;</button>
+            </div>
+            <ul class="account-links">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Wishlist</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
