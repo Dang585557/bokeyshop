@@ -12,5 +12,12 @@
     "brand": "Louis Vuitton",
     "price": 635,
     "image": "assets/images/products/lv-petite-malle.png"
+  },
+  {
+    "id": 3,
+    "name": "Lady Dior Bag",
+    "brand": "Christian Dior",
+    "price": 735,
+    "image": "assets/images/products/dior-lady-bag.png"
   }
 ]
