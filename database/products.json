@@ -82,5 +82,26 @@
     "brand": "Louis Vuitton",
     "price": 595,
     "image": "assets/images/products/lv-voyage-embossed.png"
+  },
+  {
+    "id": 13,
+    "name": "Gucci Embossed Bag",
+    "brand": "Gucci",
+    "price": 595,
+    "image": "assets/images/products/gucci-embossed-bag.png"
+  },
+  {
+    "id": 14,
+    "name": "LV Monogram Messenger",
+    "brand": "Louis Vuitton",
+    "price": 595,
+    "image": "assets/images/products/lv-monogram-messenger.png"
+  },
+  {
+    "id": 15,
+    "name": "LV Black Messenger",
+    "brand": "Louis Vuitton",
+    "price": 595,
+    "image": "assets/images/products/lv-black-messenger.png"
   }
 ]
