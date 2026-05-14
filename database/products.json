@@ -33,5 +33,26 @@
     "brand": "Louis Vuitton",
     "price": 635,
     "image": "assets/images/products/lv-hobo-bag.png"
+  },
+  {
+    "id": 6,
+    "name": "YSL Envelope Bag",
+    "brand": "Saint Laurent",
+    "price": 635,
+    "image": "assets/images/products/ysl-envelope-bag.png"
+  },
+  {
+    "id": 7,
+    "name": "LV Messenger Bag",
+    "brand": "Louis Vuitton",
+    "price": 635,
+    "image": "assets/images/products/lv-messenger-bag.png"
+  },
+  {
+    "id": 8,
+    "name": "LV Trio Messenger",
+    "brand": "Louis Vuitton",
+    "price": 635,
+    "image": "assets/images/products/lv-trio-messenger.png"
   }
 ]
