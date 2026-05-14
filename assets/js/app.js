@@ -1,7 +1,7 @@
 const products = [
     { id: 15, name: "LV Trio Messenger", brand: "LOUIS VUITTON", price: 635, image: "assets/images/products/lv-trio-messenger.png", colors: ["black"], category: "latest" },
     { id: 14, name: "LV Messenger Bag", brand: "LOUIS VUITTON", price: 635, image: "assets/images/products/lv-messenger-bag.png", colors: ["black"], category: "latest" },
-    { id: 13, name: "YSL Envelope Bag", brand: "SAINT LAURENT", price: 635, image: "assets/images/products/ysl-envelope-bag.png", colors: ["black", "gold"], category: "latest" },
+    { id: 13, name: "YSL Envelope Bag", brand: "Saint Laurent", price: 635, image: "assets/images/products/ysl-envelope-bag.png", colors: ["black", "gold"], category: "latest" },
     { id: 12, name: "Monogram Hobo Bag", brand: "LOUIS VUITTON", price: 635, image: "assets/images/products/lv-hobo-bag.png", colors: ["black", "gold"], category: "latest" },
     { id: 11, name: "Petite Malle Monogram", brand: "LOUIS VUITTON", price: 635, image: "assets/images/products/lv-petite-malle-black.png", colors: ["black", "gold"], category: "latest" },
     { id: 10, name: "Lady Dior Bag", brand: "DIOR", price: 735, image: "assets/images/products/dior-lady-bag.png", colors: ["black", "white"], category: "latest" },
@@ -244,7 +244,7 @@ function toggleAccount() {
 document.addEventListener('DOMContentLoaded', function() {
     const path = window.location.pathname;
 
-    if (path.includes('index.html') || path === '/') {
+    if (path.includes('index.html') || path.endsWith('/') || path.endsWith('Ai-/')) {
         loadProducts();
     } else if (path.includes('shop.html')) {
         loadProducts(); // Load all products for the shop page
