@@ -26,7 +26,7 @@ function createProductCard(product) {
             <div class="product-info">
                 <div class="product-brand">${product.brand}</div>
                 <div class="product-name">${product.name}</div>
-                <div class="product-price">$${product.price.toLocaleString()}</div>
+                <div class="product-price">฿${product.price.toLocaleString()}</div>
                 <div class="product-colors">${colorsHtml}</div>
             </div>
         </div>
@@ -107,20 +107,20 @@ function updateCartDisplay() {
                 <div class="item-details">
                     <h4>${item.name}</h4>
                     <p>${item.brand}</p>
-                    <p>$${item.price.toLocaleString()}</p>
+                    <p>฿${item.price.toLocaleString()}</p>
                 </div>
                 <div class="item-quantity">
                     <button onclick="updateCartQuantity(${item.id}, ${item.quantity - 1})">-</button>
                     <input type="number" value="${item.quantity}" onchange="updateCartQuantity(${item.id}, this.value)">
                     <button onclick="updateCartQuantity(${item.id}, ${item.quantity + 1})">+</button>
                 </div>
-                <div class="item-total">$${(item.price * item.quantity).toLocaleString()}</div>
+                <div class="item-total">฿${(item.price * item.quantity).toLocaleString()}</div>
                 <button class="remove-btn" onclick="removeFromCart(${item.id})">×</button>
             </div>
         `).join('');
 
         const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        if (cartTotalElement) cartTotalElement.textContent = '$' + total.toLocaleString();
+        if (cartTotalElement) cartTotalElement.textContent = '฿' + total.toLocaleString();
         if (cartCountElement) cartCountElement.textContent = cart.length.toString();
     }
 }
@@ -142,7 +142,7 @@ function loadCheckout() {
                     <div class="order-item-brand">${item.brand}</div>
                     <div class="order-item-qty">Qty: ${item.quantity}</div>
                 </div>
-                <div class="order-item-price">$${(item.price * item.quantity).toLocaleString()}</div>
+                <div class="order-item-price">฿${(item.price * item.quantity).toLocaleString()}</div>
             </div>
         `).join('');
 
@@ -153,10 +153,10 @@ function loadCheckout() {
 
         if (orderTotal) {
             orderTotal.innerHTML = `
-                <div class="total-row"><span>Subtotal:</span><span>$${subtotal.toLocaleString()}</span></div>
-                <div class="total-row"><span>Shipping:</span><span>$${shipping}</span></div>
-                <div class="total-row"><span>Tax:</span><span>$${tax}</span></div>
-                <div class="total-row final"><span>TOTAL:</span><span>$${total.toLocaleString()}</span></div>
+                <div class="total-row"><span>Subtotal:</span><span>฿${subtotal.toLocaleString()}</span></div>
+                <div class="total-row"><span>Shipping:</span><span>฿${shipping}</span></div>
+                <div class="total-row"><span>Tax:</span><span>฿${tax}</span></div>
+                <div class="total-row final"><span>TOTAL:</span><span>฿${total.toLocaleString()}</span></div>
             `;
         }
     }
@@ -179,7 +179,7 @@ function loadProductDetail() {
             <div class="product-details">
                 <div class="product-brand-large">${product.brand}</div>
                 <h1>${product.name}</h1>
-                <div class="product-price-large">$${product.price.toLocaleString()}</div>
+                <div class="product-price-large">฿${product.price.toLocaleString()}</div>
                 <div class="product-colors-large"><label>Color:</label>${colorsHtml}</div>
                 <div class="product-quantity"><label>Quantity:</label><input type="number" id="quantity" value="1" min="1"></div>
                 <button class="btn-primary" onclick="addToCartFromDetail(${product.id})">BUY NOW</button>
