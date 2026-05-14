@@ -5,5 +5,12 @@
     "brand": "Gucci",
     "price": 49900,
     "image": "assets/images/products/gucci-bag-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Louis Vuitton Petite Malle",
+    "brand": "Louis Vuitton",
+    "price": 185000,
+    "image": "assets/images/products/lv-petite-malle.png"
   }
 ]
