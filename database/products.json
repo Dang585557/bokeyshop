@@ -26,5 +26,12 @@
     "brand": "Louis Vuitton",
     "price": 635,
     "image": "assets/images/products/lv-petite-malle-black.png"
+  },
+  {
+    "id": 5,
+    "name": "Monogram Hobo Bag",
+    "brand": "Louis Vuitton",
+    "price": 635,
+    "image": "assets/images/products/lv-hobo-bag.png"
   }
 ]
