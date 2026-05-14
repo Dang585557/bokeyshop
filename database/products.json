@@ -54,5 +54,33 @@
     "brand": "Louis Vuitton",
     "price": 635,
     "image": "assets/images/products/lv-trio-messenger.png"
+  },
+  {
+    "id": 9,
+    "name": "LV Voyage Monogram",
+    "brand": "Louis Vuitton",
+    "price": 595,
+    "image": "assets/images/products/lv-voyage-monogram.png"
+  },
+  {
+    "id": 10,
+    "name": "LV Voyage Eclipse",
+    "brand": "Louis Vuitton",
+    "price": 595,
+    "image": "assets/images/products/lv-voyage-eclipse.png"
+  },
+  {
+    "id": 11,
+    "name": "LV Voyage Leather",
+    "brand": "Louis Vuitton",
+    "price": 595,
+    "image": "assets/images/products/lv-voyage-leather.png"
+  },
+  {
+    "id": 12,
+    "name": "LV Voyage Embossed",
+    "brand": "Louis Vuitton",
+    "price": 595,
+    "image": "assets/images/products/lv-voyage-embossed.png"
   }
 ]
