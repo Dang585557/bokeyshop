@@ -1,7 +1,8 @@
 const products = [
     { id: 23, name: "LV New Collection", brand: "LOUIS VUITTON", price: 635, image: "assets/images/products/1778807998099.jpg", colors: ["brown", "gold"], category: "latest" },
+
     { id: 24, name: "LV New BOKKEY", brand: "GOARD", price: 595, image: "assets/images/products/1778807998013.jpg", colors: ["brown", "gold"], category: "latest" },
-    { id: 25, name: "LV New BOKKES", brand: "Dior", price: 595, image: "assets/images/products/dior.jpg", colors: ["brown", "gold"], category: "latest" },
+    { id: 25, name: "LV New BOKKES", brand: "Dior", price: 595, image: "assets/images/products/12345678910.jpg", colors: ["brown", "gold"], category: "latest" },
     { id: 22, name: "LV Black Messenger", brand: "LOUIS VUITTON", price: 595, image: "assets/images/products/lv-black-messenger.png", colors: ["black"], category: "latest" },
     { id: 21, name: "LV Monogram Messenger", brand: "LOUIS VUITTON", price: 595, image: "assets/images/products/lv-monogram-messenger.png", colors: ["brown"], category: "latest" },
     { id: 20, name: "Gucci Embossed Bag", brand: "GUCCI", price: 595, image: "assets/images/products/gucci-embossed-bag.png", colors: ["black"], category: "latest" },
