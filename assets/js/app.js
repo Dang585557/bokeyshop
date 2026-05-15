@@ -1,6 +1,6 @@
 const products = [
     { id: 23, name: "LV New Collection", brand: "LOUIS VUITTON", price: 635, image: "assets/images/products/1778807998099.jpg", colors: ["brown", "gold"], category: "latest" },
-    { id: 24, name: "LV New Collection", brand: "GOARD", price: 595, image: "assets/images/products/1778807998099.jpg", colors: ["brown", "gold"], category: "latest" },
+    { id: 24, name: "LV New BOKKEY", brand: "GOARD", price: 595, image: "assets/images/products/1778807998013.jpg", colors: ["brown", "gold"], category: "latest" },
  
     { id: 22, name: "LV Black Messenger", brand: "LOUIS VUITTON", price: 595, image: "assets/images/products/lv-black-messenger.png", colors: ["black"], category: "latest" },
     { id: 21, name: "LV Monogram Messenger", brand: "LOUIS VUITTON", price: 595, image: "assets/images/products/lv-monogram-messenger.png", colors: ["brown"], category: "latest" },
