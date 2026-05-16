@@ -28,9 +28,6 @@
         </div>
     </header>
 
-
-
-
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
@@ -42,11 +39,10 @@
                 <button class="btn-secondary" onclick="window.location.href='#collections'">VIEW COLLECTION</button>
             </div>
         </div>
-        
+        <div class="hero-image">
+            <img src="assets/images/1000059595.jpg" alt="Heritage Gold Signature Bag">
+        </div>
     </section>
-
-
-
 
     <!-- FEATURES -->
     <section class="features">
@@ -72,8 +68,55 @@
         </div>
     </section>
 
-
-
-
     <!-- LATEST COLLECTION -->
-    <section class="products-section">
+    <section class="products-section" id="collections">
+        <h2 class="section-title">LATEST COLLECTION</h2>
+        <div class="products-grid" id="latest-products">
+            <!-- Products will be loaded by JS -->
+        </div>
+    </section>
+
+    <!-- CURATED SELECTION -->
+    <section class="products-section" style="background: var(--secondary-dark);">
+        <h2 class="section-title">CURATED SELECTION</h2>
+        <div class="products-grid" id="curated-products">
+            <!-- Products will be loaded by JS -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo" style="margin-bottom: 1.5rem;">HERITAGE GOLD</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">The ultimate destination for luxury handbag connoisseurs.</p>
+            </div>
+            <div class="footer-section">
+                <h4>SHOP</h4>
+                <ul>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">All Collections</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>NEWSLETTER</h4>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">Subscribe for exclusive updates.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 HERITAGE GOLD. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
