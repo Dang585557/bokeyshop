@@ -111,7 +111,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>ABOUT US</h3>
+                <h4>ABOUT US</h4>
                 <ul>
                     <li><a href="#">Our Story</a></li>
                     <li><a href="#">Sustainability</a></li>
@@ -119,7 +119,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>CUSTOMER SERVICE</h3>
+                <h4>CUSTOMER SERVICE</h4>
                 <ul>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Shipping Info</a></li>
@@ -127,7 +127,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>POLICIES</h3>
+                <h4>POLICIES</h4>
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms & Conditions</a></li>
@@ -135,12 +135,12 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>CONNECT</h3>
-                <div class="social-links">
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                </div>
+                <h4>CONNECT</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -149,38 +149,24 @@
     </footer>
 
     <!-- OVERLAYS -->
-    <div class="overlay" id="searchOverlay">
-        <button class="close-btn" onclick="toggleSearch()">×</button>
-        <div class="search-container">
-            <input type="text" placeholder="Search for products, brands..." id="searchInput">
-            <button class="btn-primary" onclick="handleSearch()">SEARCH</button>
-        </div>
-    </div>
-
-    <div class="overlay" id="cartOverlay">
-        <button class="close-btn" onclick="toggleCart()">×</button>
-        <div class="cart-container">
+    <div id="cartOverlay" class="overlay">
+        <div class="overlay-content">
+            <button class="close-btn" onclick="toggleCart()">×</button>
             <h2>YOUR CART</h2>
-            <div class="cart-items" id="cartItems">
-                <!-- Cart items will be loaded here -->
-            </div>
+            <div id="cartItems"></div>
             <div class="cart-total">
-                <h3>TOTAL: <span id="cartTotal">฿0</span></h3>
-                <button class="btn-primary" onclick="checkout()">CHECKOUT</button>
+                TOTAL: <span id="cartTotal">฿0</span>
             </div>
+            <button class="btn-primary" style="width: 100%; margin-top: 2rem;">CHECKOUT</button>
         </div>
     </div>
 
-    <div class="overlay" id="accountOverlay">
-        <button class="close-btn" onclick="toggleAccount()">×</button>
-        <div class="account-container">
-            <h2>MY ACCOUNT</h2>
-            <div class="account-options">
-                <a href="#">Profile</a>
-                <a href="#">Orders</a>
-                <a href="#">Wishlist</a>
-                <a href="#">Settings</a>
-                <a href="#">Logout</a>
+    <div id="searchOverlay" class="overlay">
+        <div class="overlay-content">
+            <button class="close-btn" onclick="toggleSearch()">×</button>
+            <div class="search-box">
+                <input type="text" placeholder="Search for products, brands...">
+                <button class="btn-primary">SEARCH</button>
             </div>
         </div>
     </div>
