@@ -22,17 +22,16 @@ const products = [
     { id: 7, name: "Coussin PM", brand: "CHANEL", price: 4200, image: "https://via.placeholder.com/250x250?text=Coussin", colors: ["black", "silver", "green"], category: "latest" },
     { id: 8, name: "Neverfull MM", brand: "LOUIS VUITTON", price: 1620, image: "https://via.placeholder.com/250x250?text=Neverfull", colors: ["brown", "beige"], category: "latest" }
 ];
-
 function loadProducts(filterBrand = 'all', filterPrice = 'all', sortBy = 'newest') {
     const productGrid = document.getElementById('productGrid');
     if (!productGrid) return;
-    
+
     let filtered = [...products];
-    
+
     if (filterBrand !== 'all') {
         filtered = filtered.filter(p => p.brand === filterBrand);
     }
-    
+
     if (filterPrice !== 'all') {
         filtered = filtered.filter(p => {
             if (filterPrice === '0-1000') return p.price < 1000;
@@ -42,60 +41,91 @@ function loadProducts(filterBrand = 'all', filterPrice = 'all', sortBy = 'newest
             return true;
         });
     }
-    
+
     if (sortBy === 'price-low') filtered.sort((a, b) => a.price - b.price);
     else if (sortBy === 'price-high') filtered.sort((a, b) => b.price - a.price);
-    else if (sortBy === 'name') filtered.sort((a, b) => a.name.localeCompare(b.name));
-    
-    productGrid.innerHTML = filtered.map(createProductCard).join('');
-}
+    else if (sortBy === 'newest') filtered.sort((a, b) => b.id - a.id);
 
-function createProductCard(product) {
-    return `
+    productGrid.innerHTML = filtered.map(product => `
         <div class="product-card" onclick="viewProduct(${product.id})">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}">
+                <div class="brand-badge">${product.brand}</div>
             </div>
             <div class="product-info">
-                <p class="brand-name">${product.brand}</p>
+                <div class="product-brand">${product.brand}</div>
                 <h3 class="product-name">${product.name}</h3>
-                <p class="product-price">฿${product.price.toLocaleString()}</p>
+                <div class="product-price">฿${product.price}</div>
+                <div class="product-colors">
+                    ${product.colors.map(color => `<span class="color-dot" style="background: ${color}"></span>`).join('')}
+                </div>
             </div>
         </div>
-    `;
+    `).join('');
+}
+
+function loadHomeProducts() {
+    const latestGrid = document.getElementById('latestProducts');
+    const curatedGrid = document.getElementById('curatedProducts');
+
+    if (latestGrid) {
+        const latest = products.slice(0, 4);
+        latestGrid.innerHTML = latest.map(product => `
+            <div class="product-card" onclick="viewProduct(${product.id})">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="brand-badge">${product.brand}</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">${product.brand}</div>
+                    <h3 class="product-name">${product.name}</h3>
+                    <div class="product-price">฿${product.price}</div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    if (curatedGrid) {
+        const curated = products.filter(p => p.id <= 8).slice(0, 4);
+        curatedGrid.innerHTML = curated.map(product => `
+            <div class="product-card" onclick="viewProduct(${product.id})">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="brand-badge">${product.brand}</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">${product.brand}</div>
+                    <h3 class="product-name">${product.name}</h3>
+                    <div class="product-price">฿${product.price}</div>
+                </div>
+            </div>
+        `).join('');
+    }
 }
 
 function viewProduct(id) {
-    const product = products.find(p => p.id === id);
-    if (product) {
-        window.location.href = `product-detail.html?id=${id}`;
-    }
+    console.log('Viewing product:', id);
+}
+
+function toggleCart() {
+    const cart = document.getElementById('cartOverlay');
+    if (cart) cart.classList.toggle('active');
+}
+
+function toggleSearch() {
+    const search = document.getElementById('searchOverlay');
+    if (search) search.style.display = search.style.display === 'flex' ? 'none' : 'flex';
+}
+
+function toggleAccount() {
+    alert('Account feature coming soon!');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadProducts();
-    
-    const brandFilters = document.querySelectorAll('input[name="brand"]');
-    const priceFilters = document.querySelectorAll('input[name="price"]');
-    const sortSelect = document.querySelector('.sort-select');
-    const applyBtn = document.querySelector('.apply-filters');
-    const clearBtn = document.querySelector('.clear-all');
-
-    if (applyBtn) {
-        applyBtn.addEventListener('click', () => {
-            const brand = Array.from(brandFilters).find(i => i.checked)?.value || 'all';
-            const price = Array.from(priceFilters).find(i => i.checked)?.value || 'all';
-            const sort = sortSelect?.value || 'newest';
-            loadProducts(brand, price, sort);
-        });
+    if (document.getElementById('productGrid')) {
+        loadProducts();
     }
-
-    if (clearBtn) {
-        clearBtn.addEventListener('click', () => {
-            brandFilters.forEach(i => i.checked = false);
-            priceFilters.forEach(i => i.checked = false);
-            if (sortSelect) sortSelect.value = 'newest';
-            loadProducts();
-        });
+    if (document.getElementById('latestProducts')) {
+        loadHomeProducts();
     }
 });
