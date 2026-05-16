@@ -22,6 +22,7 @@ const products = [
     { id: 7, name: "Coussin PM", brand: "CHANEL", price: 4200, image: "https://via.placeholder.com/250x250?text=Coussin", colors: ["black", "silver", "green"], category: "latest" },
     { id: 8, name: "Neverfull MM", brand: "LOUIS VUITTON", price: 1620, image: "https://via.placeholder.com/250x250?text=Neverfull", colors: ["brown", "beige"], category: "latest" }
 ];
+
 function loadProducts(filterBrand = 'all', filterPrice = 'all', sortBy = 'newest') {
     const productGrid = document.getElementById('productGrid');
     if (!productGrid) return;
@@ -48,16 +49,16 @@ function loadProducts(filterBrand = 'all', filterPrice = 'all', sortBy = 'newest
 
     productGrid.innerHTML = filtered.map(product => `
         <div class="product-card" onclick="viewProduct(${product.id})">
+            <div class="brand-badge">${product.brand}</div>
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}">
-                <div class="brand-badge">${product.brand}</div>
             </div>
             <div class="product-info">
                 <div class="product-brand">${product.brand}</div>
-                <h3 class="product-name">${product.name}</h3>
-                <div class="product-price">฿${product.price}</div>
-                <div class="product-colors">
-                    ${product.colors.map(color => `<span class="color-dot" style="background: ${color}"></span>`).join('')}
+                <div class="product-name">${product.name}</div>
+                <div class="product-price">฿${product.price.toLocaleString()}</div>
+                <div class="color-dots">
+                    ${product.colors.map(color => `<div class="color-dot" style="background-color: ${color}"></div>`).join('')}
                 </div>
             </div>
         </div>
@@ -69,34 +70,40 @@ function loadHomeProducts() {
     const curatedGrid = document.getElementById('curatedProducts');
 
     if (latestGrid) {
-        const latest = products.slice(0, 4);
+        const latest = [...products].sort((a, b) => b.id - a.id).slice(0, 4);
         latestGrid.innerHTML = latest.map(product => `
             <div class="product-card" onclick="viewProduct(${product.id})">
+                <div class="brand-badge">${product.brand}</div>
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}">
-                    <div class="brand-badge">${product.brand}</div>
                 </div>
                 <div class="product-info">
                     <div class="product-brand">${product.brand}</div>
-                    <h3 class="product-name">${product.name}</h3>
-                    <div class="product-price">฿${product.price}</div>
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-price">฿${product.price.toLocaleString()}</div>
+                    <div class="color-dots">
+                        ${product.colors.map(color => `<div class="color-dot" style="background-color: ${color}"></div>`).join('')}
+                    </div>
                 </div>
             </div>
         `).join('');
     }
 
     if (curatedGrid) {
-        const curated = products.filter(p => p.id <= 8).slice(0, 4);
+        const curated = products.slice(0, 4);
         curatedGrid.innerHTML = curated.map(product => `
             <div class="product-card" onclick="viewProduct(${product.id})">
+                <div class="brand-badge">${product.brand}</div>
                 <div class="product-image">
                     <img src="${product.image}" alt="${product.name}">
-                    <div class="brand-badge">${product.brand}</div>
                 </div>
                 <div class="product-info">
                     <div class="product-brand">${product.brand}</div>
-                    <h3 class="product-name">${product.name}</h3>
-                    <div class="product-price">฿${product.price}</div>
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-price">฿${product.price.toLocaleString()}</div>
+                    <div class="color-dots">
+                        ${product.colors.map(color => `<div class="color-dot" style="background-color: ${color}"></div>`).join('')}
+                    </div>
                 </div>
             </div>
         `).join('');
@@ -104,28 +111,49 @@ function loadHomeProducts() {
 }
 
 function viewProduct(id) {
-    console.log('Viewing product:', id);
+    window.location.href = `product-detail.html?id=${id}`;
 }
 
-function toggleCart() {
-    const cart = document.getElementById('cartOverlay');
-    if (cart) cart.classList.toggle('active');
-}
+function loadProductDetail() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'));
+    const product = products.find(p => p.id === productId);
 
-function toggleSearch() {
-    const search = document.getElementById('searchOverlay');
-    if (search) search.style.display = search.style.display === 'flex' ? 'none' : 'flex';
-}
+    if (!product) return;
 
-function toggleAccount() {
-    alert('Account feature coming soon!');
+    document.getElementById('productImage').src = product.image;
+    document.getElementById('productBrand').innerText = product.brand;
+    document.getElementById('productName').innerText = product.name;
+    document.getElementById('productPrice').innerText = `฿${product.price.toLocaleString()}`;
+    
+    const colorOptions = document.getElementById('colorOptions');
+    if (colorOptions) {
+        colorOptions.innerHTML = product.colors.map(color => `
+            <div class="color-dot" style="background-color: ${color}"></div>
+        `).join('');
+    }
+
+    const relatedGrid = document.getElementById('relatedProducts');
+    if (relatedGrid) {
+        const related = products.filter(p => p.brand === product.brand && p.id !== product.id).slice(0, 4);
+        relatedGrid.innerHTML = related.map(p => `
+            <div class="product-card" onclick="viewProduct(${p.id})">
+                <div class="brand-badge">${p.brand}</div>
+                <div class="product-image">
+                    <img src="${p.image}" alt="${p.name}">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">${p.brand}</div>
+                    <div class="product-name">${p.name}</div>
+                    <div class="product-price">฿${p.price.toLocaleString()}</div>
+                </div>
+            </div>
+        `).join('');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('productGrid')) {
-        loadProducts();
-    }
-    if (document.getElementById('latestProducts')) {
-        loadHomeProducts();
-    }
+    if (document.getElementById('productGrid')) loadProducts();
+    if (document.getElementById('latestProducts')) loadHomeProducts();
+    if (document.getElementById('productName')) loadProductDetail();
 });
