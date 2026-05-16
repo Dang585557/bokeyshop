@@ -15,7 +15,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="shop.html" class="active">SHOP</a></li>
                     <li><a href="index.html#brands">BRANDS</a></li>
                     <li><a href="index.html#collections">COLLECTIONS</a></li>
                 </ul>
@@ -39,7 +39,6 @@
                 <label><input type="checkbox" name="brand" value="DIOR"> DIOR</label>
                 <label><input type="checkbox" name="brand" value="HERMÈS"> HERMÈS</label>
             </div>
-
             <div class="filter-group">
                 <h4>PRICE RANGE</h4>
                 <label><input type="radio" name="price" value="0-1000"> ต่ำกว่า ฿1,000</label>
@@ -47,7 +46,6 @@
                 <label><input type="radio" name="price" value="3000-5000"> ฿3,000 - ฿5,000</label>
                 <label><input type="radio" name="price" value="5000+"> ฿5,000+</label>
             </div>
-
             <div class="filter-group">
                 <h4>COLOR</h4>
                 <div class="color-filter">
@@ -58,9 +56,8 @@
                     <div class="color-dot" style="background-color: red;" title="Red"></div>
                 </div>
             </div>
-
-            <button class="btn-primary" onclick="applyFilters()" style="width: 100%; margin-top: 2rem;">APPLY FILTERS</button>
-            <button class="btn-secondary" onclick="clearFilters()" style="width: 100%; margin-top: 1rem;">CLEAR ALL</button>
+            <button class="btn-primary" style="width: 100%; margin-top: 2rem;">APPLY FILTERS</button>
+            <button class="btn-secondary" style="width: 100%; margin-top: 1rem;">CLEAR ALL</button>
         </aside>
 
         <main class="shop-main">
@@ -68,7 +65,7 @@
                 <h1>LUXURY COLLECTION</h1>
                 <div class="sort-options">
                     <label>Sort by:</label>
-                    <select onchange="sortProducts(this.value)">
+                    <select>
                         <option value="newest">Newest</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
@@ -77,41 +74,44 @@
                 </div>
             </div>
 
-            <div class="products-grid" id="shopProducts">
+            <div class="product-grid" id="shopProducts">
+                <!-- Products will be loaded by app.js -->
             </div>
         </main>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>HERITAGE GOLD</h3>
+        <div class="footer-container">
+            <div class="footer-info">
+                <a href="index.html" class="logo">HERITAGE GOLD</a>
                 <p>The ultimate destination for luxury handbags and premium accessories. Curated for the modern connoisseur.</p>
             </div>
             <div class="footer-links">
-                <h4>ABOUT US</h4>
-                <ul>
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">Press</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>CUSTOMER SERVICE</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>POLICIES</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
+                <div class="link-group">
+                    <h4>ABOUT US</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>CUSTOMER SERVICE</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>POLICIES</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -119,107 +119,59 @@
         </div>
     </footer>
 
-    <!-- PRODUCT DETAIL MODAL -->
+    <!-- MODAL -->
     <div id="productModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div class="modal-image-container">
-                <img id="modalImage" src="" alt="Product Image">
-            </div>
-            <div class="modal-details">
-                <div class="modal-brand" id="modalBrand">BRAND</div>
-                <h2 class="modal-title" id="modalTitle">Product Name</h2>
-                <div class="modal-price" id="modalPrice">฿0</div>
-                <p class="modal-desc" id="modalDesc">This exquisite piece represents the pinnacle of luxury craftsmanship. Designed for those who appreciate the finer things in life, it combines timeless elegance with modern functionality.</p>
-                
-                <div style="margin-bottom: 2rem;">
-                    <label style="display: block; color: var(--text-muted); font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 0.5rem;">QUANTITY:</label>
-                    <input type="number" value="1" min="1" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-light); padding: 0.8rem; width: 100px; font-family: 'Poppins', sans-serif;">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="Product">
                 </div>
-
-                <div class="modal-actions">
-                    <button class="btn-add-cart" onclick="addToCartFromModal()">ADD TO CART</button>
-                    <button class="btn-wishlist">♡</button>
+                <div class="modal-info">
+                    <p id="modalBrand" class="modal-brand"></p>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalPrice" class="modal-price"></p>
+                    <p id="modalDesc" class="modal-desc"></p>
+                    <div class="modal-actions">
+                        <button class="btn-primary" onclick="addToCartFromModal()">ADD TO CART</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- OVERLAYS -->
-    <div id="cartOverlay" class="overlay">
-        <div class="overlay-content" style="max-width: 400px; position: absolute; right: 0; top: 0; height: 100%; border-left: 1px solid var(--primary-gold);">
-            <button class="close-btn" onclick="toggleCart()">×</button>
-            <h2 style="font-family: 'Playfair Display', serif; color: var(--primary-gold); margin-bottom: 2rem; letter-spacing: 2px;">YOUR CART</h2>
-            <div id="cartItems" style="min-height: 300px; color: var(--text-muted);">Your cart is currently empty.</div>
-            <div class="cart-total" style="font-size: 1.2rem; font-weight: 600; margin: 2rem 0; border-top: 1px solid var(--border-color); padding-top: 1rem;">
-                TOTAL: <span id="cartTotal" style="color: var(--primary-gold); float: right;">฿0</span>
+    <!-- CART OVERLAY -->
+    <div id="cartOverlay" class="cart-overlay">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>YOUR CART</h2>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
             </div>
-            <button class="btn-primary" style="width: 100%;">CHECKOUT</button>
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>TOTAL:</span>
+                    <span id="cartTotal">฿0</span>
+                </div>
+                <button class="btn-primary checkout-btn">CHECKOUT</button>
+            </div>
         </div>
     </div>
 
-    <div id="searchOverlay" class="overlay">
-        <div class="overlay-content" style="background: transparent; border: none;">
-            <button class="close-btn" onclick="toggleSearch()">×</button>
-            <div class="search-box" style="display: flex; gap: 1rem;">
-                <input type="text" placeholder="Search for products, brands..." style="padding: 1rem 2rem; width: 400px; background: rgba(20, 20, 20, 0.9); border: 1px solid var(--primary-gold); color: var(--text-light); font-family: 'Poppins', sans-serif; font-size: 1rem;">
-                <button class="btn-primary">SEARCH</button>
+    <!-- SEARCH OVERLAY -->
+    <div id="searchOverlay" class="search-overlay">
+        <button class="close-search" onclick="toggleSearch()">&times;</button>
+        <div class="search-container">
+            <h2>SEARCH</h2>
+            <div class="search-input-wrapper">
+                <input type="text" placeholder="Search for products, brands...">
+                <button class="search-submit">SEARCH</button>
             </div>
         </div>
     </div>
 
     <script src="assets/js/app.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            loadShopProducts();
-        });
-
-        function applyFilters() {
-            const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(el => el.value);
-            const selectedPrice = document.querySelector('input[name="price"]:checked')?.value;
-
-            let filtered = products.filter(product => {
-                const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(product.brand);
-                const priceMatch = !selectedPrice || checkPriceRange(product.price, selectedPrice);
-                return brandMatch && priceMatch;
-            });
-
-            loadProductsGrid("shopProducts", filtered);
-        }
-
-        function checkPriceRange(price, range) {
-            const ranges = {
-                '0-1000': [0, 1000],
-                '1000-3000': [1000, 3000],
-                '3000-5000': [3000, 5000],
-                '5000+': [5000, Infinity]
-            };
-            const [min, max] = ranges[range];
-            return price >= min && price <= max;
-        }
-
-        function clearFilters() {
-            document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(el => el.checked = false);
-            loadShopProducts();
-        }
-
-        function sortProducts(sortBy) {
-            let sortedProducts = [...products];
-            switch(sortBy) {
-                case 'price-low':
-                    sortedProducts.sort((a, b) => a.price - b.price);
-                    break;
-                case 'price-high':
-                    sortedProducts.sort((a, b) => b.price - a.price);
-                    break;
-                case 'name':
-                    sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
-                    break;
-                default:
-                    sortedProducts.sort((a, b) => a.id - b.id);
-            }
-            loadProductsGrid("shopProducts", sortedProducts);
-        }
-    </script>
 </body>
 </html>
