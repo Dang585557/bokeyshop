@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUCCI MARMONT MINI | HERITAGE GOLD</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .product-detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 8rem 5% 5rem;
+            max-width: 1400px;
+            margin: auto;
+        }
+        .product-gallery {
+            display: flex;
+            gap: 1rem;
+        }
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .thumbnails img {
+            width: 80px;
+            height: 80px;
+            background: #111;
+            padding: 10px;
+            border: 1px solid #333;
+            cursor: pointer;
+        }
+        .main-image {
+            flex-grow: 1;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #222;
+        }
+        .main-image img {
+            max-width: 90%;
+        }
+        .product-content h2 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .price-tag {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .selection-title {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: var(--light-grey);
+        }
+        .color-dots {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .dot {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .dot.active { border-color: var(--gold); }
+        .dot.black { background: black; }
+        .dot.white { background: white; }
+        .dot.red { background: #8b0000; }
+
+        .action-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .btn-buy {
+            background: var(--gold);
+            color: black;
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .btn-cart {
+            background: transparent;
+            color: var(--gold);
+            padding: 1.2rem;
+            text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid var(--gold);
+        }
+        .description-box {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+        }
+        .description-box h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        .description-box p {
+            font-size: 0.9rem;
+            color: var(--light-grey);
+            margin-bottom: 1rem;
+        }
+        @media (max-width: 968px) {
+            .product-detail-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Heritage Gold</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Shop</a></li>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </nav>
+
+    <div class="product-detail-container">
+        <div class="product-gallery">
+            <div class="thumbnails">
+                <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1474473012/443497_DRW3T_1000_001_100_0000_Light-GG-Marmont-small-shoulder-bag.jpg" alt="thumb1">
+                <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1474473012/443497_DRW3T_1000_002_100_0000_Light-GG-Marmont-small-shoulder-bag.jpg" alt="thumb2">
+            </div>
+            <div class="main-image">
+                <img src="https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1474473012/443497_DRW3T_1000_001_100_0000_Light-GG-Marmont-small-shoulder-bag.jpg" alt="Gucci Marmont">
+            </div>
+        </div>
+
+        <div class="product-content">
+            <p style="color: var(--gold); font-size: 0.8rem; margin-bottom: 0.5rem;">AUTHENTIC 100%</p>
+            <h2>GUCCI MARMONT MINI BAG</h2>
+            <p class="price-tag">฿49,900</p>
+
+            <p class="selection-title">Color Selection</p>
+            <div class="color-dots">
+                <div class="dot black active"></div>
+                <div class="dot white"></div>
+                <div class="dot red"></div>
+            </div>
+
+            <div class="action-btns">
+                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-cart">Add to Cart</a>
+            </div>
+
+            <div class="description-box">
+                <h4>Description</h4>
+                <p>A sophisticated miniature of the iconic Marmont bag, crafted from premium chevron Matelassé leather. A timeless investment piece for the discerning collector.</p>
+                <p><strong>MATERIAL:</strong> Matelassé Leather</p>
+                <p><strong>SIZE:</strong> 18 x 12 x 6 cm</p>
+                <p><strong>COMES WITH:</strong> Dust bag, Box, Authenticity Card</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <span class="footer-logo luxury-font">Heritage Gold</span>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Contact</a>
+        </div>
+        <p class="copyright">© 2026 HERITAGE GOLD. AUTHENTICITY GUARANTEED 100%.</p>
+    </footer>
+</body>
+</html>

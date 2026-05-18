@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHECKOUT | HERITAGE GOLD</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .checkout-container {
+            padding: 8rem 5% 5rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        input, select {
+            width: 100%;
+            padding: 1rem;
+            background: #111;
+            border: 1px solid #333;
+            color: white;
+            font-family: inherit;
+        }
+        .order-summary {
+            background: #111;
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .total-row {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+        @media (max-width: 768px) {
+            .checkout-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Heritage Gold</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Shop</a></li>
+            <li><a href="#">Brands</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-user"></i>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </nav>
+
+    <div class="checkout-container">
+        <h2 class="luxury-font" style="font-size: 2.5rem; margin-bottom: 3rem; text-align: center;">Checkout</h2>
+        
+        <div class="checkout-grid">
+            <div class="shipping-info">
+                <h3 style="margin-bottom: 2rem; text-transform: uppercase; font-size: 1.2rem;">Shipping Information</h3>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Shipping Address</label>
+                    <input type="text" placeholder="123 Luxury Lane">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" placeholder="Bangkok">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" placeholder="+66 81 234 5678">
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <h3 style="margin-bottom: 2rem; text-transform: uppercase; font-size: 1.2rem;">Order Summary</h3>
+                <div class="summary-row">
+                    <span>Gucci Marmont Mini</span>
+                    <span>฿49,900</span>
+                </div>
+                <div class="summary-row">
+                    <span>Shipping</span>
+                    <span>Free</span>
+                </div>
+                <div class="summary-row total-row">
+                    <span>Total</span>
+                    <span>฿49,900</span>
+                </div>
+                <a href="#" class="btn-gold" style="width: 100%; text-align: center; margin-top: 2rem;">Place Order</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <span class="footer-logo luxury-font">Heritage Gold</span>
+        <p class="copyright">© 2026 HERITAGE GOLD. AUTHENTICITY GUARANTEED 100%.</p>
+    </footer>
+</body>
+</html>

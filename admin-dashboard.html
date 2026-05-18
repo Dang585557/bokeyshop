@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN DASHBOARD | HERITAGE GOLD</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-container {
+            padding: 8rem 5% 5rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+        }
+        .sidebar {
+            background: #111;
+            padding: 2rem;
+            border: 1px solid #222;
+            height: fit-content;
+        }
+        .sidebar ul li {
+            margin-bottom: 1.5rem;
+        }
+        .sidebar ul li a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--light-grey);
+        }
+        .sidebar ul li a.active {
+            color: var(--gold);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .stat-card {
+            background: #111;
+            padding: 2rem;
+            border-left: 4px solid var(--gold);
+        }
+        .stat-card h4 {
+            font-size: 0.8rem;
+            color: var(--light-grey);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .stat-card p {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #111;
+        }
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid #222;
+        }
+        th {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: var(--gold);
+        }
+        @media (max-width: 968px) {
+            .admin-container { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Heritage Gold</div>
+        <div class="nav-icons">
+            <span style="font-size: 0.8rem; color: var(--gold);">ADMIN MODE</span>
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#" class="active">Dashboard</a></li>
+                <li><a href="#">Manage Products</a></li>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Customers</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h2 class="luxury-font" style="margin-bottom: 2rem;">Overview</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Total Sales</h4>
+                    <p>฿1,245,000</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Orders</h4>
+                    <p>42</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Active Users</h4>
+                    <p>1,204</p>
+                </div>
+            </div>
+
+            <h3 class="luxury-font" style="margin-bottom: 1.5rem;">Recent Orders</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Product</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#HG-9041</td>
+                        <td>John Smith</td>
+                        <td>Chanel Classic Flap</td>
+                        <td style="color: #00ff00;">Delivered</td>
+                        <td>฿185,000</td>
+                    </tr>
+                    <tr>
+                        <td>#HG-9042</td>
+                        <td>Emma Watson</td>
+                        <td>Gucci Marmont Mini</td>
+                        <td style="color: var(--gold);">Processing</td>
+                        <td>฿49,900</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>
