@@ -1,0 +1,522 @@
+{
+  "Louis Vuitton": {
+    "products": [
+      {
+        "name": "Trunk PM Monogram",
+        "price": 635000,
+        "color": "Monogram Black"
+      },
+      {
+        "name": "Alma BB Epi Leather",
+        "price": 112000,
+        "color": "Rose Ballerine"
+      },
+      {
+        "name": "Speedy 30 Damier",
+        "price": 95000,
+        "color": "Ebene"
+      },
+      {
+        "name": "Neverfull MM Monogram",
+        "price": 145000,
+        "color": "Brown"
+      },
+      {
+        "name": "Pochette Metis",
+        "price": 98000,
+        "color": "Monogram Canvas"
+      },
+      {
+        "name": "Capucines BB",
+        "price": 425000,
+        "color": "Black"
+      },
+      {
+        "name": "Twist MM",
+        "price": 185000,
+        "color": "Epi Leather"
+      },
+      {
+        "name": "Coussin PM",
+        "price": 165000,
+        "color": "Monogram Vernis"
+      },
+      {
+        "name": "Petite Malle",
+        "price": 285000,
+        "color": "Monogram Canvas"
+      },
+      {
+        "name": "Twist Wallet",
+        "price": 45000,
+        "color": "Black Epi"
+      },
+      {
+        "name": "Pont-Neuf PM",
+        "price": 125000,
+        "color": "Damier Azur"
+      },
+      {
+        "name": "Noé BB",
+        "price": 78000,
+        "color": "Monogram"
+      },
+      {
+        "name": "Keepall 55",
+        "price": 135000,
+        "color": "Damier"
+      },
+      {
+        "name": "Artsy MM",
+        "price": 155000,
+        "color": "Monogram"
+      },
+      {
+        "name": "Lumineuse PM",
+        "price": 195000,
+        "color": "Monogram Vernis"
+      },
+      {
+        "name": "Pont-Neuf Wallet",
+        "price": 52000,
+        "color": "Monogram"
+      },
+      {
+        "name": "Tote Bag",
+        "price": 185000,
+        "color": "Epi Leather"
+      },
+      {
+        "name": "Shoulder Bag",
+        "price": 165000,
+        "color": "Damier"
+      },
+      {
+        "name": "Crossbody Bag",
+        "price": 125000,
+        "color": "Monogram"
+      },
+      {
+        "name": "Evening Clutch",
+        "price": 95000,
+        "color": "Vernis"
+      }
+    ]
+  },
+  "Gucci": {
+    "products": [
+      {
+        "name": "GG Marmont Small Shoulder Bag",
+        "price": 96500,
+        "color": "Black"
+      },
+      {
+        "name": "Sylvie 1969 Top Handle",
+        "price": 145000,
+        "color": "Red"
+      },
+      {
+        "name": "Dionysus Medium",
+        "price": 165000,
+        "color": "Black Leather"
+      },
+      {
+        "name": "Soho Disco",
+        "price": 125000,
+        "color": "Red Leather"
+      },
+      {
+        "name": "GG Marmont Large",
+        "price": 125000,
+        "color": "Matelasse"
+      },
+      {
+        "name": "Bamboo Hobo",
+        "price": 155000,
+        "color": "Brown"
+      },
+      {
+        "name": "Brixton Loafer Bag",
+        "price": 135000,
+        "color": "Black"
+      },
+      {
+        "name": "Marmot Velvet",
+        "price": 145000,
+        "color": "Burgundy"
+      },
+      {
+        "name": "Loved Shoulder Bag",
+        "price": 165000,
+        "color": "Black"
+      },
+      {
+        "name": "Ophidia Tote",
+        "price": 185000,
+        "color": "Beige"
+      },
+      {
+        "name": "Marmont Crossbody",
+        "price": 105000,
+        "color": "Black"
+      },
+      {
+        "name": "Leather Clutch",
+        "price": 85000,
+        "color": "Red"
+      },
+      {
+        "name": "Bamboo Clutch",
+        "price": 95000,
+        "color": "Brown"
+      },
+      {
+        "name": "Soho Bag",
+        "price": 115000,
+        "color": "Black"
+      },
+      {
+        "name": "Gucci Bloom Bag",
+        "price": 125000,
+        "color": "Floral"
+      },
+      {
+        "name": "Marmont Backpack",
+        "price": 155000,
+        "color": "Black"
+      },
+      {
+        "name": "Sylvie Crossbody",
+        "price": 135000,
+        "color": "Red"
+      },
+      {
+        "name": "Dionysus Clutch",
+        "price": 105000,
+        "color": "Black"
+      },
+      {
+        "name": "Bamboo Shoulder",
+        "price": 145000,
+        "color": "Brown"
+      },
+      {
+        "name": "Loved Crossbody",
+        "price": 125000,
+        "color": "Black"
+      }
+    ]
+  },
+  "Dior": {
+    "products": [
+      {
+        "name": "Book Tote Medium",
+        "price": 128000,
+        "color": "Blue Oblique"
+      },
+      {
+        "name": "Saddle Bag",
+        "price": 165000,
+        "color": "Brown Leather"
+      },
+      {
+        "name": "Caro Bag",
+        "price": 145000,
+        "color": "Black"
+      },
+      {
+        "name": "Montaigne Bag",
+        "price": 155000,
+        "color": "Beige"
+      },
+      {
+        "name": "Diorama Clutch",
+        "price": 95000,
+        "color": "Black"
+      },
+      {
+        "name": "Diorama Crossbody",
+        "price": 125000,
+        "color": "Black"
+      },
+      {
+        "name": "Roller Bag",
+        "price": 185000,
+        "color": "Beige"
+      },
+      {
+        "name": "Diorissimo Tote",
+        "price": 175000,
+        "color": "Navy"
+      },
+      {
+        "name": "Cannage Bag",
+        "price": 155000,
+        "color": "Black"
+      },
+      {
+        "name": "Oblique Shoulder",
+        "price": 145000,
+        "color": "Blue"
+      },
+      {
+        "name": "Dior Addict Bag",
+        "price": 165000,
+        "color": "Red"
+      },
+      {
+        "name": "Vintage Hobo",
+        "price": 135000,
+        "color": "Brown"
+      },
+      {
+        "name": "Embroidered Tote",
+        "price": 165000,
+        "color": "Beige"
+      },
+      {
+        "name": "Leather Clutch",
+        "price": 85000,
+        "color": "Black"
+      },
+      {
+        "name": "Shoulder Bag",
+        "price": 145000,
+        "color": "Beige"
+      },
+      {
+        "name": "Crossbody Bag",
+        "price": 125000,
+        "color": "Black"
+      },
+      {
+        "name": "Hobo Bag",
+        "price": 155000,
+        "color": "Brown"
+      },
+      {
+        "name": "Tote Bag",
+        "price": 175000,
+        "color": "Navy"
+      },
+      {
+        "name": "Evening Bag",
+        "price": 105000,
+        "color": "Black"
+      },
+      {
+        "name": "Saddle Crossbody",
+        "price": 135000,
+        "color": "Brown"
+      }
+    ]
+  },
+  "Chanel": {
+    "products": [
+      {
+        "name": "Classic Double Flap",
+        "price": 325000,
+        "color": "Beige Clair"
+      },
+      {
+        "name": "Jumbo Caviar",
+        "price": 385000,
+        "color": "Black"
+      },
+      {
+        "name": "Mini Flap Bag",
+        "price": 285000,
+        "color": "Red"
+      },
+      {
+        "name": "Wallet on Chain",
+        "price": 245000,
+        "color": "Black"
+      },
+      {
+        "name": "Grand Shopping Tote",
+        "price": 365000,
+        "color": "Beige"
+      },
+      {
+        "name": "Caviar Shoulder",
+        "price": 305000,
+        "color": "Black"
+      },
+      {
+        "name": "Lambskin Clutch",
+        "price": 265000,
+        "color": "Navy"
+      },
+      {
+        "name": "Quilted Hobo",
+        "price": 345000,
+        "color": "Black"
+      },
+      {
+        "name": "Crossbody Bag",
+        "price": 295000,
+        "color": "Beige"
+      },
+      {
+        "name": "Evening Clutch",
+        "price": 225000,
+        "color": "Black"
+      },
+      {
+        "name": "Leather Tote",
+        "price": 355000,
+        "color": "Beige"
+      },
+      {
+        "name": "Shoulder Bag",
+        "price": 315000,
+        "color": "Black"
+      },
+      {
+        "name": "Vintage Flap",
+        "price": 275000,
+        "color": "Red"
+      },
+      {
+        "name": "Caviar Clutch",
+        "price": 235000,
+        "color": "Black"
+      },
+      {
+        "name": "Lambskin Tote",
+        "price": 365000,
+        "color": "Beige"
+      },
+      {
+        "name": "Quilted Crossbody",
+        "price": 285000,
+        "color": "Black"
+      },
+      {
+        "name": "Mini Shoulder",
+        "price": 255000,
+        "color": "Red"
+      },
+      {
+        "name": "Hobo Bag",
+        "price": 335000,
+        "color": "Black"
+      },
+      {
+        "name": "Leather Shoulder",
+        "price": 305000,
+        "color": "Beige"
+      },
+      {
+        "name": "Flap Crossbody",
+        "price": 275000,
+        "color": "Navy"
+      }
+    ]
+  },
+  "Goyard": {
+    "products": [
+      {
+        "name": "Saint Louis PM Tote",
+        "price": 79000,
+        "color": "Green"
+      },
+      {
+        "name": "Saint Louis GM",
+        "price": 95000,
+        "color": "Beige"
+      },
+      {
+        "name": "Anjou Backpack",
+        "price": 125000,
+        "color": "Black"
+      },
+      {
+        "name": "Belvedere Clutch",
+        "price": 65000,
+        "color": "Red"
+      },
+      {
+        "name": "Poitiers Shoulder",
+        "price": 105000,
+        "color": "Black"
+      },
+      {
+        "name": "Tote Bag",
+        "price": 85000,
+        "color": "Beige"
+      },
+      {
+        "name": "Crossbody Bag",
+        "price": 75000,
+        "color": "Green"
+      },
+      {
+        "name": "Hobo Bag",
+        "price": 95000,
+        "color": "Black"
+      },
+      {
+        "name": "Wallet",
+        "price": 45000,
+        "color": "Red"
+      },
+      {
+        "name": "Clutch",
+        "price": 55000,
+        "color": "Black"
+      },
+      {
+        "name": "Travel Bag",
+        "price": 115000,
+        "color": "Beige"
+      },
+      {
+        "name": "Shoulder Tote",
+        "price": 105000,
+        "color": "Green"
+      },
+      {
+        "name": "Evening Bag",
+        "price": 85000,
+        "color": "Black"
+      },
+      {
+        "name": "Leather Clutch",
+        "price": 65000,
+        "color": "Red"
+      },
+      {
+        "name": "Canvas Tote",
+        "price": 95000,
+        "color": "Beige"
+      },
+      {
+        "name": "Reversible Bag",
+        "price": 105000,
+        "color": "Black"
+      },
+      {
+        "name": "Pouch",
+        "price": 45000,
+        "color": "Green"
+      },
+      {
+        "name": "Small Bag",
+        "price": 75000,
+        "color": "Red"
+      },
+      {
+        "name": "Medium Tote",
+        "price": 85000,
+        "color": "Beige"
+      },
+      {
+        "name": "Large Hobo",
+        "price": 115000,
+        "color": "Black"
+      }
+    ]
+  }
+}
